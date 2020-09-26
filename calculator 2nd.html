@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>calculator user input</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="">
+	<style>
+		.btn{
+			font-size: 30px;
+			font-weight: bold;
+			color: white;
+		}
+		h1{
+			text-align: center;
+			color: white;
+			text-transform: capitalize;
+		}
+	</style>
+</head>
+<body> 
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 bg-info py-3 my-3 card">
+	<h1>Simple user input calculator</h1>         
+        <input type="text" id="n1" class="form-control" placeholder="Input number"><br/>
+        <input type="text" id="n2" class="form-control" placeholder="Input number"><br/>
+        
+        <select id="operators" class="form-control">
+            <option value="+"> + </option>
+            <option value="-"> - </option>
+            <option value="/"> / </option>
+            <option value="X"> X </option>
+            <option value="%"> % </option>
+        </select><br/>
+        
+        <button onclick="calc();" class="form-control btn btn-danger"> = </button><br/>
+        <input type="text" id="result" class="form-control">
+    </div>
+</div>
+</div>
+
+        <script>
+            
+            function calc()
+            {
+                var n1 = parseFloat(document.getElementById('n1').value);
+                var n2 = parseFloat(document.getElementById('n2').value);
+                
+                var oper = document.getElementById('operators').value;
+                
+                if(oper === '+')
+                {
+                    document.getElementById('result').value = n1+n2;
+                }
+                
+                if(oper === '-')
+                {
+                    document.getElementById('result').value = n1-n2;
+                }
+                
+                if(oper === '/')
+                {
+                    document.getElementById('result').value = n1/n2;
+                }
+                
+                if(oper === 'X')
+                {
+                    document.getElementById('result').value = n1*n2;
+                }
+
+                if(oper === '%')
+                {
+                    document.getElementById('result').value = n1%n2;
+                }
+            }
+            
+        </script>
+</body>
+</html>
